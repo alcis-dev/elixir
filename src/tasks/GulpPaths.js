@@ -131,6 +131,12 @@ class GulpPaths {
      * @return {object}
      */
     parse(path) {
+        //test for path ending in a space
+        //remove if found
+        if(path.endsWith(' ')){
+            path = path.substring(0, path.length - 1);
+        }
+       
         let segments = parse(path);
 
         // If there's a dot in the src file path, the parser
